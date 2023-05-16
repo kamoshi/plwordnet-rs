@@ -1,0 +1,15 @@
+[package]
+name = "plwordnet"
+version = "0.0.1"
+authors = ["Maciej Jur"]
+description = "Native Rust library facilitating the integration of plWordNet 4.2 lexical resources."
+repository = "https://github.com/kamoshi/plwordnet-rs/"
+license = "MIT"
+keywords = ["plwordnet", "polish", "wordnet"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+quick-xml = "0.28.2"
+bstringify = "0.1.2"
