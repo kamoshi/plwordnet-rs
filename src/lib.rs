@@ -2,7 +2,7 @@ mod model;
 mod parser;
 
 
-pub use model::PlWordNet;
+pub use model::{PlWordNet, Language};
 
 
 #[cfg(test)]

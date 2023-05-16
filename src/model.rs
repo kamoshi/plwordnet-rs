@@ -2,6 +2,7 @@ use std::collections::{HashMap, HashSet};
 use std::ops::Not;
 
 
+/// Represents the plWordNet lexical resource.
 #[derive(Debug)]
 pub struct PlWordNet {
     pub owner: String,
@@ -82,7 +83,13 @@ pub struct SynsetRelation {
 }
 
 
-pub enum Language { PL, EN }
+/// Represents the language of lexical units and synsets in plWordNet.
+pub enum Language {
+    /// Indicates Polish language.
+    PL,
+    /// Indicates English language.
+    EN,
+}
 
 
 impl PlWordNet {
