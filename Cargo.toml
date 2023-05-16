@@ -1,6 +1,6 @@
 [package]
 name = "plwordnet"
-version = "0.0.1"
+version = "0.0.2"
 authors = ["Maciej Jur"]
 description = "Native Rust library facilitating the integration of plWordNet 4.2 lexical resources."
 repository = "https://github.com/kamoshi/plwordnet-rs/"

@@ -64,7 +64,7 @@ macro_rules! gen_parser {
 
 
 gen_parser!(parse_array_list,
-    PlWordnet,
+    PlWordNet,
     {lexical_units, synsets, relation_types},
     [lexical_relations, synset_relations],
     owner,
@@ -155,11 +155,11 @@ enum ParsingContext {
 }
 
 
-fn from_file(path: &str) -> Result<PlWordnet, Box<dyn Error>> {
+fn from_file(path: &str) -> Result<PlWordNet, Box<dyn Error>> {
     let mut reader = Reader::from_file(path)?;
     let mut buf = Vec::new();
 
-    let mut root: Option<PlWordnet> = None;
+    let mut root: Option<PlWordNet> = None;
     let mut context = ParsingContext::None;
     loop {
         match reader.read_event_into(&mut buf) {
@@ -241,7 +241,32 @@ fn from_file(path: &str) -> Result<PlWordnet, Box<dyn Error>> {
 }
 
 
-impl PlWordnet {
+impl PlWordNet {
+    /// Creates a new instance of `PlWordnet` by loading the plWordNet XML file from the specified path.
+    ///
+    /// # Arguments
+    ///
+    /// * `path` - A string slice representing the path to the plWordNet XML file.
+    ///
+    /// # Returns
+    ///
+    /// * `Result<PlWordnet, Box<dyn Error>>` - A result that contains the `PlWordnet` instance if the file is successfully loaded, or an error if loading fails.
+    ///
+    /// # Example
+    ///
+    /// ```rust
+    /// use std::error::Error;
+    /// use plwordnet::{PlWordNet};
+    ///
+    /// fn main() -> Result<(), Box<dyn Error>> {
+    ///     let file_path = "plwordnet_4_2.xml";
+    ///     let plwordnet = PlWordNet::from_file(file_path)?;
+    ///
+    ///     // Start using the plWordNet instance...
+    ///
+    ///     Ok(())
+    /// }
+    /// ```
     pub fn from_file(path: &str) -> Result<Self, Box<dyn Error>> {
         from_file(path)
     }

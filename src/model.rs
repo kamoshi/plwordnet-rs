@@ -3,7 +3,7 @@ use std::ops::Not;
 
 
 #[derive(Debug)]
-pub struct PlWordnet {
+pub struct PlWordNet {
     pub owner: String,
     pub date: String,
     pub version: String,
@@ -85,7 +85,7 @@ pub struct SynsetRelation {
 pub enum Language { PL, EN }
 
 
-impl PlWordnet {
+impl PlWordNet {
     pub fn filter_synsets_by_lang(&self, lang: Language) -> impl Iterator<Item=&Synset> {
         self.synsets.values()
             .filter_map(move |s| {

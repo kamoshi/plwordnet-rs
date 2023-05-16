@@ -2,13 +2,16 @@ mod model;
 mod parser;
 
 
+pub use model::PlWordNet;
+
+
 #[cfg(test)]
 mod tests {
-    use crate::model::PlWordnet;
+    use crate::model::PlWordNet;
 
     #[test]
     fn loading() {
-        let wn = PlWordnet::from_file("plwordnet_4_2.xml").unwrap();
+        let wn = PlWordNet::from_file("plwordnet_4_2.xml").unwrap();
         assert_eq!(wn.lexical_units.len(), 513410);
         assert_eq!(wn.synsets.len(), 353585);
         assert_eq!(wn.relation_types.len(), 306);
