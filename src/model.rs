@@ -1,6 +1,15 @@
+use std::borrow::Cow;
 use std::collections::{HashMap, HashSet};
 use std::ops::Not;
 
+
+/// Represents the language of lexical units and synsets in plWordNet.
+pub enum Language {
+    /// Indicates Polish language.
+    PL,
+    /// Indicates English language.
+    EN,
+}
 
 /// Represents the plWordNet lexical resource.
 #[derive(Debug)]
@@ -15,6 +24,19 @@ pub struct PlWordNet {
     pub synset_relations: Vec<SynsetRelation>,
 }
 
+/// Metadata information for a PlWordNet instance.
+#[derive(Debug, Clone)]
+pub struct Metadata<'a> {
+    pub owner: Cow<'a, str>,
+    pub date: Cow<'a, str>,
+    pub version: Cow<'a, str>,
+    pub lexical_units: usize,
+    pub synsets: usize,
+    pub relation_types: usize,
+    pub lexical_relations: usize,
+    pub synset_relations: usize,
+}
+
 #[derive(Debug)]
 pub struct LexicalUnit {
     pub id: usize,
@@ -27,6 +49,20 @@ pub struct LexicalUnit {
     pub source: String,
     pub variant: i32,
     pub language: String,
+}
+
+#[derive(Debug)]
+pub struct LexicalUnitView<'a> {
+    pub id: usize,
+    pub name: Cow<'a, str>,
+    pub pos: Cow<'a, str>,
+    pub tagcount: i32,
+    pub domain: Cow<'a, str>,
+    pub desc: Cow<'a, str>,
+    pub workstate: Cow<'a, str>,
+    pub source: Cow<'a, str>,
+    pub variant: i32,
+    pub language: Language,
 }
 
 #[derive(Debug)]
@@ -80,15 +116,6 @@ pub struct SynsetRelation {
     pub relation: usize,
     pub valid: bool,
     pub owner: String,
-}
-
-
-/// Represents the language of lexical units and synsets in plWordNet.
-pub enum Language {
-    /// Indicates Polish language.
-    PL,
-    /// Indicates English language.
-    EN,
 }
 
 

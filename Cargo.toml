@@ -1,6 +1,6 @@
 [package]
 name = "plwordnet"
-version = "0.0.3"
+version = "0.0.4"
 authors = ["Maciej Jur"]
 description = "Native Rust library facilitating the integration of plWordNet 4.2 lexical resources."
 homepage = "https://github.com/kamoshi/plwordnet-rs/"
@@ -14,3 +14,6 @@ edition = "2021"
 [dependencies]
 quick-xml = "0.28.2"
 bstringify = "0.1.2"
+
+[dev-dependencies]
+once_cell = "1.17.1"

@@ -1,6 +1,6 @@
 # plWordNet-rs
 
-`plwordnet-rs` is a Rust crate that provides a powerful and efficient interface for working with plWordNet lexical resources. It allows you to load and read plWordNet XML files, making it easy to incorporate plWordNet data into your Rust applications.
+`plwordnet` is a Rust crate that provides a powerful and efficient interface for working with plWordNet lexical resources. It allows you to load and read plWordNet XML files, making it easy to incorporate plWordNet data into your Rust applications.
 
 ## Features
 
@@ -16,7 +16,7 @@ Add this crate to your `Cargo.toml` file:
 
 ```toml
 [dependencies]
-plwordnet-rs = "0.0.*"
+plwordnet = "0.0.*"
 ```
 
 ## Contributing
