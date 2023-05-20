@@ -7,7 +7,12 @@ mod tests;
 
 
 pub use model::{
+    Language,
     PlWordNet,
     Metadata,
-    Language,
+    LexicalUnitView,
+    SynsetView,
+    LexicalRelationView,
+    SynsetRelationView,
+    RelationTypeView
 };
